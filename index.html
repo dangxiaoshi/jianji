@@ -135,7 +135,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
-const API_KEY = 'sk-a68be30d00994d60bcac5c9bc2a6b063';
+const API_KEY = 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjlkMWRjMzFlLWI0ZDAtNDQ4Yi1hNzZmLWIwY2M2M2Q4MTQ5OCJ9.eyJhdWQiOiJkYW5neGlhb3NoaS0yZ3ZmajFyN2YxYWFiMzQxIiwiZXhwIjoxNzc3MzYyODkzLCJpYXQiOjE3NzQ3NzA4OTMsImF0X2hhc2giOiJrdlVtZk1QTVQxMmVfTnhvcmtad0NBIiwicHJvamVjdF9pZCI6ImRhbmd4aWFvc2hpLTJndmZqMXI3ZjFhYWIzNDEiLCJtZXRhIjp7InBsYXRmb3JtIjoiQXBpS2V5In0sImFkbWluaXN0cmF0b3JfaWQiOiIyMDM3ODEzNzA0NjgwMjQzMjAyIiwidXNlcl90eXBlIjoiIiwiY2xpZW50X3R5cGUiOiJjbGllbnRfc2VydmVyIiwiaXNfc3lzdGVtX2FkbWluIjp0cnVlfQ.i5BEQm69MpXcELP8mgLnn_hextfh4hMPzhTMpjyICc9drJC8OImORdOklWuE52qa9wRhWUr2nEIghiXfHbPLykeHaz2q_aK5KI_O8hqXP1ZDXUMWOHT9Zd8gdvAhVCF_rgd2PZjgXyHp6bFnBx2UmXMD0JEokXKI6B1SFpzzbNPOvv8pGoVcpHF0ygscEyGDsCxgizr4Jk4fR0RYMuuTb88uA1u7zBPI9_gLB2_8hXfHy-2_vUWedu3GafB07fley8UpJBRh2BfA2wDn-gkUIoXwD6EuSKjTGsg_z9Cnh66YrC2Nk56tKNgV6BZRru1F20x8N9O5RgqvB5zPk2sCAg';
 
 const SYSTEM_PROMPT = `你是一个做了十年内容营销的播客剪辑顾问。你帮人决定一期播客哪些该留、哪些该删。
 
@@ -205,14 +205,14 @@ async function analyze() {
   outputSection.style.display = 'none';
 
   try {
-    const res = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+    const res = await fetch('https://dangxiaoshi-2gvfj1r7f1aab341.api.tcloudbasegateway.com/v1/ai/deepseek/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`
       },
       body: JSON.stringify({
-        model: 'qwen-turbo',
+        model: 'deepseek-v3-0324',
         max_tokens: 4096,
         stream: true,
         messages: [

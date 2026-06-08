@@ -276,6 +276,9 @@ function copyResult() {
     setTimeout(() => btn.innerHTML = '📋 复制结果', 1500);
   });
 }
+
+const _t = new URLSearchParams(location.search).get('t');
+if (_t) document.getElementById('transcript').value = _t;
 </script>
 </body>
 </html>

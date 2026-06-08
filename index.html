@@ -104,6 +104,13 @@
     text-align: center; padding: 24px;
     font-size: 12px; color: #c7c7cc;
   }
+  .btn-next {
+    display: block; width: 100%; padding: 16px; border: none; border-radius: 12px;
+    font-size: 16px; font-weight: 600; cursor: pointer; text-align: center;
+    background: #1d1d1f; color: #fff; text-decoration: none; margin-top: 16px;
+    transition: background 0.2s ease;
+  }
+  .btn-next:hover { background: #3a3a3c; }
 </style>
 </head>
 <body>
@@ -280,6 +287,8 @@ function copyResult() {
 const _params = new URLSearchParams(location.search);
 const _t = _params.get('t');
 const _id = _params.get('id');
+const _back = _params.get('back');
+
 if (_t) {
   document.getElementById('transcript').value = _t;
 } else if (_id) {
@@ -287,6 +296,14 @@ if (_t) {
     .then(r => r.text())
     .then(text => { document.getElementById('transcript').value = text; })
     .catch(() => {});
+}
+
+if (_back) {
+  const nextBtn = document.createElement('a');
+  nextBtn.href = _back;
+  nextBtn.className = 'btn-next';
+  nextBtn.textContent = '进入逐字稿剪辑 →';
+  document.getElementById('outputSection').appendChild(nextBtn);
 }
 </script>
 </body>

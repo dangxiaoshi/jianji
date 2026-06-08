@@ -283,7 +283,7 @@ const _id = _params.get('id');
 if (_t) {
   document.getElementById('transcript').value = _t;
 } else if (_id) {
-  fetch('https://8.136.133.196/api/paste/' + _id)
+  fetch('https://chuanjiabao.vip/paste/' + _id)
     .then(r => r.text())
     .then(text => { document.getElementById('transcript').value = text; })
     .catch(() => {});
